@@ -2,6 +2,7 @@
 '''Interactive dashboard with Streamlit.'''
 
 import streamlit as st
+import sys
 import os
 from dotenv import load_dotenv
 from src.spotify_client import get_spotify_client_interactive, safe_audio_features, AuthorizationRequired
