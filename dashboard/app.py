@@ -7,6 +7,9 @@ from dotenv import load_dotenv
 from src.spotify_client import get_spotify_client_interactive, safe_audio_features, AuthorizationRequired
 from src.spotify_client import _build_oauth  # only for handling redirect flow in Streamlit
 
+# Add the project root directory to Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 load_dotenv()
 
 st.set_page_config(page_title="Music Popularity Predictor", layout="wide")
