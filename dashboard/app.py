@@ -5,8 +5,9 @@ import streamlit as st
 import sys
 import os
 from dotenv import load_dotenv
-from src.spotify_client import get_spotify_client_interactive, safe_audio_features, AuthorizationRequired
-from src.spotify_client import _build_oauth  # only for handling redirect flow in Streamlit
+from src.spotify_client import spotify_login_flow
+#from src.spotify_client import get_spotify_client_interactive, safe_audio_features, AuthorizationRequired
+#from src.spotify_client import _build_oauth  # only for handling redirect flow in Streamlit
 
 # Add the project root directory to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -18,7 +19,8 @@ st.title("🎵 Music Popularity Predictor — Streamlit + Spotify OAuth")
 
 # Step 0: show status
 st.sidebar.header("Spotify Auth")
-sp, auth_url = get_spotify_client_interactive()
+sp = spotify_login_flow(st)
+#sp, auth_url = get_spotify_client_interactive()
 
 if sp is None:
     st.sidebar.write("Not authenticated with Spotify.")
