@@ -1,16 +1,17 @@
  # src/spotify_client.py
 import os
+from dotenv import load_dotenv
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI")
+SCOPE = "user-read-private"
+CACHE_PATH = ".spotify_cache"
+
 import time
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from urllib.parse import urlparse, parse_qs
-
-SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
-SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
-REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI", "http://127.0.0.1:8501")
-SCOPE = "user-read-private"
-CACHE_PATH = ".spotify_cache"
-
 
 def build_oauth():
     return SpotifyOAuth(

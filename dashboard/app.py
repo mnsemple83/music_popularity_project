@@ -5,12 +5,14 @@ import streamlit as st
 import sys
 import os
 from dotenv import load_dotenv
+load_dotenv()
+
 from src.spotify_client import spotify_login_flow, safe_audio_features
 
 # Add the project root directory to Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-load_dotenv()
+
 
 st.set_page_config(page_title="Music Popularity Predictor", layout="wide")
 st.title("🎵 Music Popularity Predictor — Streamlit + Spotify OAuth")
