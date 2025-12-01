@@ -23,7 +23,7 @@ sp, auth_url = get_spotify_client_interactive()
 if sp is None:
     st.sidebar.write("Not authenticated with Spotify.")
     st.sidebar.markdown(f"[Click here to login to Spotify]({auth_url})")
-    st.sidebar.info("After logging in, Spotify will redirect you back to this app (http://localhost:8501).")
+    st.sidebar.info("After logging in, Spotify will redirect you back to this app (http://127.0.0.1:8501).")
     st.info("Please click 'Login to Spotify' in the sidebar, log in, then return to the app.")
     # Early return so the rest of the app doesn't run until user authorizes
     st.stop()

@@ -18,7 +18,7 @@ load_dotenv()  # loads .env from project root
 SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 # Use the localhost base (no path) — must match exact Redirect URI in Spotify Dashboard
-REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI", "http://localhost:8501")
+REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI", "http://127.0.0.1:8501")
 
 # Minimal scope is fine for public data that still requires a user token.
 # If you later want to access playlists or user libraries, add scopes like
